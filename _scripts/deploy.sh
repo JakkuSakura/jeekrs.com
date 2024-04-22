@@ -7,5 +7,5 @@ DIR="/var/www/html"
 pnpm run build
 
 
-(cd public && rsync -avizh --delete * "$HOST:TEMP_DIR")
+(cd public && rsync -avizh --delete * "$HOST:$TEMP_DIR")
 ssh "$HOST" "sudo rsync -avizh --delete $TEMP_DIR/* $DIR"
