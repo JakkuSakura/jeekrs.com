@@ -83,7 +83,7 @@ Prices are from 0.0001 to 100000.00. It falls nicely into f64's precision.
 
 Let's take some extreme examples. 
 
-Curreny price of SHIB is 0.00002647, and one need to buy at least 1 SHIB on BinanceSpot, it's within the precision
+Currency price of SHIB is 0.00002647, and one need to buy at least 1 SHIB on BinanceSpot, it's within the precision
 
 If one buys (1Billion-1)=99999999 SHIB, it's $26470 USD, decimal points are 4 + 9 = 13, still a breeze to handle it with f64
 
@@ -116,7 +116,7 @@ e.g. hyperliquid requires 5 **significant digits** on prices, and there has to b
 
 But even if you enforce 5 significant, you have to do it in the end, when sending orders, not in the middle
 
-1. you lose precisions if you do arithmetics on prices
+1. you lose precisions if you do arithmetics on prices with original decimal points
 2. Decimal doesn't support significant digits, only fixed decimal points
 3. many operations may change Decimal's decimal, and you have to set decimal points again in the end
 4. even if you have set decimal points, if it's wrong, the whole order will be rejected or the exchange impl have to check again
