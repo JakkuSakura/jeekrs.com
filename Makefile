@@ -5,7 +5,7 @@ generate:
 	hexo g -d
 deploy:
 	rsync -avizhu --delete public/. $(HOST):jeekrs.com
-	ssh $(HOST) 'sudo rsync -avizhu jeekrs.com/. /var/www/html/'
+	ssh $(HOST) 'sudo rsync -avizhu jeekrs.com/. /var/www/html/jeekrs.com'
 
 clean:
 	hexo clean
